@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 import { Router, RouterModule } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
 
 
 
@@ -11,6 +12,7 @@ import { Router, RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
+    MatIconModule,
     RouterModule.forChild([
       {
         path: '',
