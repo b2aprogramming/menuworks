@@ -7,10 +7,13 @@
     :root {
       --color-nav-bg: #464C59;
       --color-nav-bg-hover: #515A66;
+      --color-body-bg: #F1F3FA;
     }
 
   }
-
+body {
+    background: var(--color-body-bg);
+}
 mat-form-field{
     .mat-mdc-text-field-wrapper {
         height: 40px;

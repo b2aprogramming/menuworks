@@ -9,6 +9,7 @@ module.exports = {
       colors: {
         'nav-bg': 'var(--color-nav-bg)',
         'nav-bg-hover': 'var(--color-nav-bg-hover)',
+        'body-bg': 'var(--color-body-bg)',
       },
     },
   },

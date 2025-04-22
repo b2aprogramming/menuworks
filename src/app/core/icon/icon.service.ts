@@ -21,6 +21,7 @@ export class IconService {
     {name: 'layers', url: '/assets/icons/svg/layers.svg'},
     {name: 'speaker', url: '/assets/icons/svg/speaker.svg'},
     {name: 'bell', url: '/assets/icons/svg/bell2.svg'},
+    {name: 'arrow-right', url: '/assets/icons/svg/arrow-right.svg'},
   ];
 
  constructor(private matIconRegistry: MatIconRegistry,  private sanitizer: DomSanitizer){
