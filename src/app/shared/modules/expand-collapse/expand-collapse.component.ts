@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, ComponentRef, ContentChild, ElementRef, EventEmitter, Input, Output, TemplateRef, ViewContainerRef, ViewRef } from '@angular/core';
+import { ChangeDetectorRef, Component, ComponentRef, ContentChild, ElementRef, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, TemplateRef, ViewContainerRef, ViewRef } from '@angular/core';
 import { collapseAnimation } from './expand-collpase.animate';
 import { ExpandCollapseTitleDirective } from './expand-collapse-title.directive';
 
@@ -10,7 +10,7 @@ import { ExpandCollapseTitleDirective } from './expand-collapse-title.directive'
     collapseAnimation
   ]
 })
-export class ExpandCollapseComponent {
+export class ExpandCollapseComponent implements OnChanges, OnDestroy {
   @Input() public title = 'Title';
   @Input() public className = '';
   @Input() public isTitleBorder = false;
@@ -29,10 +29,17 @@ export class ExpandCollapseComponent {
   }
   private _isOpen = false;
 
+  ngOnChanges(): void {
+      console.log('@@@ VAL', this.isOpen)
+  }
+
   public onCollapse(): void {
     this.isOpen = !this.isOpen;
     this.expandCollapse.emit(this.isOpen);
     this.changeDetectorRef.detectChanges();
+  }
+  ngOnDestroy(): void {
+      this.isOpen = false;
   }
 
 }

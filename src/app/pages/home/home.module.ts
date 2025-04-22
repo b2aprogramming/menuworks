@@ -5,6 +5,8 @@ import { Router, RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTreeSelectModule } from '@shared/modules/mat-tree-select/mat-tree-select.module';
 import { ExpandCollapseModule } from '@shared/modules/expand-collapse/expand-collapse.module';
+import { ComponentsModule } from '@shared/components/components.module';
+import { SearchInputModule } from '@shared/modules/search-input/search-input.module';
 
 
 
@@ -15,6 +17,7 @@ import { ExpandCollapseModule } from '@shared/modules/expand-collapse/expand-col
   imports: [
     CommonModule,
     MatIconModule,
+    ComponentsModule,
     RouterModule.forChild([
       {
         path: '',
@@ -22,7 +25,8 @@ import { ExpandCollapseModule } from '@shared/modules/expand-collapse/expand-col
       }
     ]),
     MatTreeSelectModule,
-    ExpandCollapseModule
+    ExpandCollapseModule,
+    SearchInputModule
   ]
   
 })

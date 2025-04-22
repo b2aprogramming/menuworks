@@ -22,6 +22,12 @@ export class IconService {
     {name: 'speaker', url: '/assets/icons/svg/speaker.svg'},
     {name: 'bell', url: '/assets/icons/svg/bell2.svg'},
     {name: 'arrow-right', url: '/assets/icons/svg/arrow-right.svg'},
+    {name: 'search', url: '/assets/icons/svg/search.svg'},
+    {name: 'close', url: '/assets/icons/svg/close.svg'},
+    {name: 'settings', url: '/assets/icons/svg/settings.svg'},
+    {name: 'user', url: '/assets/icons/svg/user.svg'},
+    {name: 'filter', url: '/assets/icons/svg/filter.svg'},
+    {name: 'home', url: '/assets/icons/svg/home.svg'},
   ];
 
  constructor(private matIconRegistry: MatIconRegistry,  private sanitizer: DomSanitizer){
