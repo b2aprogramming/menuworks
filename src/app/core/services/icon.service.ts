@@ -28,6 +28,7 @@ export class IconService {
     {name: 'user', url: '/assets/icons/svg/user.svg'},
     {name: 'filter', url: '/assets/icons/svg/filter.svg'},
     {name: 'home', url: '/assets/icons/svg/home.svg'},
+    {name: 'notes', url: '/assets/icons/svg/notes.svg'},
   ];
 
  constructor(private matIconRegistry: MatIconRegistry,  private sanitizer: DomSanitizer){

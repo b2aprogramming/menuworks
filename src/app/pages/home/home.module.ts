@@ -7,7 +7,11 @@ import { MatTreeSelectModule } from '@shared/modules/mat-tree-select/mat-tree-se
 import { ExpandCollapseModule } from '@shared/modules/expand-collapse/expand-collapse.module';
 import { ComponentsModule } from '@shared/components/components.module';
 import { SearchInputModule } from '@shared/modules/search-input/search-input.module';
-
+import { CardModule } from '@shared/modules/card/card.module';
+import { IconModule } from '@shared/modules/icon/icon.module';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import {MatRadioModule} from '@angular/material/radio';
 
 
 @NgModule({
@@ -26,7 +30,12 @@ import { SearchInputModule } from '@shared/modules/search-input/search-input.mod
     ]),
     MatTreeSelectModule,
     ExpandCollapseModule,
-    SearchInputModule
+    SearchInputModule,
+    CardModule,
+    IconModule,
+    MatInputModule,
+    MatSelectModule,
+    MatRadioModule
   ]
   
 })

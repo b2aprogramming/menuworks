@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HttpClientModule  } from '@angular/common/http';
-import { IconModule } from './icon/icon.module';
+import { IconService } from './services/icon.service';
 
 
 @NgModule({
@@ -12,13 +12,11 @@ import { IconModule } from './icon/icon.module';
     CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
-    IconModule,
     HttpClientModule
   ],
   exports: [
     BrowserModule,
     BrowserAnimationsModule,
-    IconModule,
     HttpClientModule
   ],
   providers: [
@@ -26,7 +24,7 @@ import { IconModule } from './icon/icon.module';
   ]
 })
 export class CoreModule { 
-  constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
+  constructor(@Optional() @SkipSelf() parentModule: CoreModule, private iconService:IconService) {
     if(parentModule) {
       throw new Error('CoreModule is already loaded. Import it in the AppModule only');
     }
