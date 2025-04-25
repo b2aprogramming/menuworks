@@ -7,11 +7,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
 import { MatTreeSelectModule } from '@shared/modules/mat-tree-select/mat-tree-select.module';
 import { SubHeaderComponent } from './sub-header/sub-header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    SubHeaderComponent
+    SubHeaderComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +25,8 @@ import { SubHeaderComponent } from './sub-header/sub-header.component';
   ],
   exports: [
     HeaderComponent,
-    SubHeaderComponent
+    SubHeaderComponent,
+    FooterComponent
   ]
 })
 export class ComponentsModule { }

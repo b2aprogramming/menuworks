@@ -13,8 +13,10 @@ import { ExpandCollapseTitleDirective } from './expand-collapse-title.directive'
 export class ExpandCollapseComponent implements OnChanges, OnDestroy {
   @Input() public title = 'Title';
   @Input() public className = '';
+  @Input() public headerClass = '';
   @Input() public isTitleBorder = false;
   @Input() public isDownUpArrow = true;
+  @Input() public iconClass: string = 'order-2';
   @Output() public expandCollapse: EventEmitter<boolean> = new EventEmitter();
   
   @ContentChild(ExpandCollapseTitleDirective, {read: TemplateRef}) public titleRef!: TemplateRef<ExpandCollapseTitleDirective>;

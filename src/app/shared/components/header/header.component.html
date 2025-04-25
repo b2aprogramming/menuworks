@@ -47,11 +47,11 @@
             </div>
         </div>
       </nav>
-      <nav class="bg-nav-bg">
+      <nav class="bg-nav-bg sticky top-0">
         <div class="flex flex-wrap items-center justify-between w-full px-4">
             <ul class="flex flex-col mt-4 font-medium md:flex-row md:mt-0">
                 <li *ngFor="let menu of menus">
-                    <a [routerLink]="menu.link" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="md:bg-nav-bg-hover md:dark:bg-nav-bg-hover dark:bg-nav-bg-hover"  class="text-center block py-2 px-4  hover:bg-nav-bg-hover text-white" aria-current="page">{{menu.name}}</a>
+                    <a [routerLink]="menu.link" [routerLinkActiveOptions]="{exact: menu.exact}" routerLinkActive="md:bg-nav-bg-hover md:dark:bg-nav-bg-hover dark:bg-nav-bg-hover"  class="text-center block py-2 px-4  hover:bg-nav-bg-hover text-white" aria-current="page">{{menu.name}}</a>
                 </li>
             </ul>
         </div>

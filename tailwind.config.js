@@ -29,6 +29,9 @@ module.exports = {
         'body-bg': 'var(--color-body-bg)',
         'gray1': 'var(--color-gray1)',
         'blue-title': 'var(--color-blue-title)',
+        'footer-bg': 'var(--color-footer-bg)',
+        'menu-border': 'var(--color-menu-border)',
+        'grey2': 'var(--color-grey2)',
       },
       flex: {
         '50': '1 1 50%'

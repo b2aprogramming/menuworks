@@ -1,6 +1,6 @@
 <div class="collapse-expand-block {{className}}" [ngClass]="{open: isOpen}">
-  <div class="collapse-expand-header" [class.title-border]="isTitleBorder && isOpen" (click)="onCollapse()">
-    <div class="flex collapse-up-down-arrow" [ngClass]="{opend: isOpen}" *ngIf="isDownUpArrow">
+  <div class="collapse-expand-header p-1.5 justify-between flex items-center cursor-pointer" [ngClass]="[headerClass]" [class.title-border]="isTitleBorder && isOpen" (click)="onCollapse()">
+    <div class="flex collapse-up-down-arrow {{iconClass}}" [ngClass]="{opend: isOpen}" *ngIf="isDownUpArrow">
       <!-- <span></span> -->
       <mat-icon class="expand-collapse-icon" svgIcon="arrow-right" aria-hidden="false" aria-label="Example thumbs up SVG icon"></mat-icon>
     </div>

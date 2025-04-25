@@ -11,8 +11,8 @@ export class HeaderComponent {
   public selectedRoles = new FormControl<any>(null);
 
   public menus = [
-    { name: 'Home', link: '/', icon: 'home' },
-    { name: 'Ingredients2', link: '/ingredients', icon: 'info' }
+    { name: 'Home', link: '/', icon: 'home', exact: true },
+    { name: 'Ingredients2', link: '/ingredients', icon: 'info', exact: false }
   ];
 
   public userRoles = [

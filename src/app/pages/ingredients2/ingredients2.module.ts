@@ -12,7 +12,10 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     RouterModule.forChild([
-      {path: '', component: Ingredients2Component}
+      {path: '', component: Ingredients2Component, children: [
+        {path: 'search', loadChildren: () => import('./ingredients2-search/ingredients2-search.module').then(m => m.Ingredients2SearchModule)},
+        {path: '', redirectTo: 'search', pathMatch: 'full'}
+      ]},
     ])
   ]
 })
