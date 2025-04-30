@@ -11,6 +11,7 @@ $my-custom-blue: mat.define-palette((
   700: #0047cc,
   800: #0052b3,
   900: #003d80,
+  1000: #F55462,
   A100: #cce0ff,
   A200: #36AAA7,
   A400: #3385ff,
@@ -52,6 +53,32 @@ $my-theme: mat.define-light-theme((
 // Include theme styles for core components
 @include mat.core();
 @include mat.all-component-themes($my-theme);
+
+// 👇 Now customize mat-tab
+.mat-mdc-tab-group {
+  // background-color: mat.get-color-from-palette($my-primary, 50); // Light background
+
+  .mdc-tab-indicator .mdc-tab-indicator__content--underline{
+    border-width: 3px;
+  }
+    
+  .mdc-tab--active {
+    color: mat.get-color-from-palette($my-accent, 500); // Active tab color
+    font-weight: bold;
+    .mdc-tab-indicator__content {
+      border-color: mat.get-color-from-palette($my-primary, 1000);
+    }
+  }
+}
+
+.mat-tab-label {
+  color: mat.get-color-from-palette($my-primary, 700);
+
+}
+
+.mat-ink-bar {
+  background-color: mat.get-color-from-palette($my-accent, 500); // Underline color
+}
 
 @tailwind base;
 @tailwind components;

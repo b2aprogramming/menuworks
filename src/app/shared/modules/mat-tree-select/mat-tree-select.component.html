@@ -1,15 +1,19 @@
 <mat-form-field appearance="outline" class="bottom-space-0 w-full">
     <mat-label>-- Select --</mat-label>
-    <mat-select >
+    <mat-select>
         <mat-option style="display: none;">Option 1</mat-option>
-      <app-expand-collapse>
-        <app-expand-collapse>asg</app-expand-collapse>
-      </app-expand-collapse>
-      <app-expand-collapse>sag</app-expand-collapse>
-      <app-expand-collapse>sag</app-expand-collapse>
-      <app-expand-collapse>asg</app-expand-collapse>
-      <app-expand-collapse>sag</app-expand-collapse>
-      <app-expand-collapse>sag</app-expand-collapse>
-      <app-expand-collapse>sag</app-expand-collapse>
+        <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="px-2">
+          <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding class="min-h-6">
+            <button mat-icon-button disabled></button>
+            <span>{{node.name}}</span>
+          </mat-tree-node>
+          <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding class="min-h-6">
+            <button mat-icon-button matTreeNodeToggle
+                    [attr.aria-label]="'Toggle ' + node.name">
+                    <app-icon name="arrow-right" [ngClass]="[treeControl.isExpanded(node) ? 'origin-center rotate-90' : '']"></app-icon>
+            </button>
+            <span>{{node.name}}</span>
+          </mat-tree-node>
+        </mat-tree>
     </mat-select>
   </mat-form-field>

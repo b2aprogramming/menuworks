@@ -3,7 +3,7 @@
         <nav class="w-full">
             <ul class="flex flex-col mt-4 font-medium md:flex-row md:mt-0">
                 <li *ngFor="let menu of subMenus">
-                    <a [routerLink]="menu.link" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="md:border-menu-border border-b-4 md:dark:border-menu-border dark:border-menu-border"  class="text-center block py-2 px-4 border-b-4 border-transparent  hover:border-menu-border" aria-current="page">{{menu.name}}</a>
+                    <a [routerLink]="menu.link" [queryParams]="{view:'Standard'}" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="md:border-menu-border border-b-4 md:dark:border-menu-border dark:border-menu-border"  class="text-center block py-2 px-4 border-b-4 border-transparent  hover:border-menu-border" aria-current="page">{{menu.name}}</a>
                 </li>
             </ul>
         </nav>

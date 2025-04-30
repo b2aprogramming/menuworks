@@ -12,6 +12,7 @@ import { IconModule } from '@shared/modules/icon/icon.module';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import {MatRadioModule} from '@angular/material/radio';
     IconModule,
     MatInputModule,
     MatSelectModule,
-    MatRadioModule
+    MatRadioModule,
+    ReactiveFormsModule
   ]
   
 })

@@ -30,6 +30,7 @@ export class IconService {
     {name: 'home', url: '/assets/icons/svg/home.svg'},
     {name: 'notes', url: '/assets/icons/svg/notes.svg'},
     {name: 'fruit', url: '/assets/icons/svg/fruite.svg'},
+    {name: 'chef', url: '/assets/icons/svg/chef.svg'},
   ];
 
  constructor(private matIconRegistry: MatIconRegistry,  private sanitizer: DomSanitizer){

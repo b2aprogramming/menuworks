@@ -12,12 +12,15 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatTabsModule } from '@angular/material/tabs';
+import { StandardComponent } from './standard/standard.component';
 
 
 
 @NgModule({
   declarations: [
-    Ingredients2SearchComponent
+    Ingredients2SearchComponent,
+    StandardComponent
   ],
   imports: [
     CommonModule,
@@ -35,6 +38,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatFormFieldModule,
     MatTableModule,
     MatPaginatorModule,
+    MatTabsModule
 ]
 })
 export class Ingredients2SearchModule { }
