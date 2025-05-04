@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { HttpService } from '@core/http/http.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   public applicationScope = new FormControl<any>(null);
   public selectedRoles = new FormControl<any>(null);
 
@@ -31,8 +32,16 @@ export class HeaderComponent {
     { name: 'User', id: 5 }
   ];
 
-  constructor(){
+  constructor(private httpService: HttpService){
     this.selectedRoles.setValue(this.userRoles[0])
+  }
+
+  public ngOnInit(): void {
+      this.getTreeData();
+  }
+
+  public getTreeData() {
+    // this.httpService
   }
 
 }

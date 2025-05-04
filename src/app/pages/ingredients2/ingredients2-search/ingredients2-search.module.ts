@@ -6,7 +6,7 @@ import { SearchInputModule } from '@shared/modules/search-input/search-input.mod
 import { IconModule } from "@shared/modules/icon/icon.module";
 import { ExpandCollapseModule } from "@shared/modules/expand-collapse/expand-collapse.module";
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
@@ -14,13 +14,16 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTabsModule } from '@angular/material/tabs';
 import { StandardComponent } from './standard/standard.component';
+import { AdvancedComponent } from './advanced/advanced.component';
+import { CardModule } from '@shared/modules/card/card.module';
 
 
 
 @NgModule({
   declarations: [
     Ingredients2SearchComponent,
-    StandardComponent
+    StandardComponent,
+    AdvancedComponent
   ],
   imports: [
     CommonModule,
@@ -33,12 +36,14 @@ import { StandardComponent } from './standard/standard.component';
     ExpandCollapseModule,
     MatCheckboxModule,
     FormsModule,
+    ReactiveFormsModule,
     MatRadioModule,
     MatSelectModule,
     MatFormFieldModule,
     MatTableModule,
     MatPaginatorModule,
-    MatTabsModule
+    MatTabsModule,
+    CardModule
 ]
 })
 export class Ingredients2SearchModule { }

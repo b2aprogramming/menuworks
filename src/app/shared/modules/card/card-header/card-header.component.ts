@@ -8,5 +8,5 @@ import { Component, Input } from '@angular/core';
 export class CardHeaderComponent {
   @Input() padding: string = 'p-2';
   @Input() border: string = 'p-4';
-  @Input() class: string = '';
+  @Input() className: string = '';
 }

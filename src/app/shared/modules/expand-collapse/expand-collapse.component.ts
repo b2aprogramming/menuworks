@@ -16,6 +16,7 @@ export class ExpandCollapseComponent implements OnChanges, OnDestroy {
   @Input() public headerClass = '';
   @Input() public isTitleBorder = false;
   @Input() public isDownUpArrow = true;
+  @Input() public isCollapse = true;
   @Input() public iconClass: string = 'order-2';
   @Output() public expandCollapse: EventEmitter<boolean> = new EventEmitter();
   
@@ -36,6 +37,9 @@ export class ExpandCollapseComponent implements OnChanges, OnDestroy {
   }
 
   public onCollapse(): void {
+    if(!this.isCollapse) {
+      return;
+    }
     this.isOpen = !this.isOpen;
     this.expandCollapse.emit(this.isOpen);
     this.changeDetectorRef.detectChanges();

@@ -3,6 +3,9 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Observable } from 'rxjs';
 import { DATA } from '../constants';
+import { FormControl } from '@angular/forms';
+import { HttpService } from '@core/http/http.service';
+import { API } from '@core/http/http-api.constants';
 
 @Component({
   selector: 'app-standard',
@@ -13,6 +16,8 @@ export class StandardComponent implements OnInit {
   @ViewChild(MatPaginator) public paginator!: MatPaginator;
   public dataSource: MatTableDataSource<any> = new MatTableDataSource<any>(DATA);
   public listData!: Observable<any>;
+
+  public sortField = new FormControl('byRrelevance');
 
   public standardList = [
       {name: 'Favorites', id: 1, data: [
@@ -45,13 +50,28 @@ export class StandardComponent implements OnInit {
     {name: 'Match Phrase Only', id: 2, value: 'matchPhrase'},
     {name: 'Recipe Number', id: 3, value: 'recipeNumber'},
   ];
-  constructor(private changeDetectorRef: ChangeDetectorRef) {
+  public sortMenus = [
+    {name: 'Sort results by relevance', id: 1, value: 'byRrelevance'},
+    {name: 'Sort alphabetically A-Z', id: 2, value: 'a-z'},
+    {name: 'Sort alphabetically Z-A', id: 3, value: 'z-a'},
+  ];
+  constructor(
+    private changeDetectorRef: ChangeDetectorRef,
+    private httpService: HttpService
+  ) {
   }
 
   ngOnInit() {
+    this.getFilterData();
     this.changeDetectorRef.detectChanges();
     this.dataSource.paginator = this.paginator;
     this.listData = this.dataSource.connect();
+  }
+
+  public getFilterData(){
+    this.httpService.get( API.INGRADIENTS.FILTER_DATA).subscribe((res) => {
+      console.log(res);
+    })
   }
 
   ngOnDestroy() {

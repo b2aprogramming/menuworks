@@ -12,5 +12,12 @@ export const API = {
         mockUrl: 'assets/data/product-types.json',
         apiUrl: ''
      },   
+       
+    },
+    INGRADIENTS: {
+      FILTER_DATA: {
+         mockUrl: 'assets/data/filter-data.json',
+         apiUrl: ''
+      },
     }
 }

@@ -6,5 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent {
-  @Input() class: string = '';
+  @Input() className: string = '';
+  @Input() noShadow: boolean = false;
 }

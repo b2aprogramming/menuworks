@@ -17,7 +17,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatIconModule
   ],
   exports: [
-    ExpandCollapseComponent
+    ExpandCollapseComponent,
+    ExpandCollapseTitleDirective
   ]
 })
 export class ExpandCollapseModule { }

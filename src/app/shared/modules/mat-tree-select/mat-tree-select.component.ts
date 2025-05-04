@@ -46,6 +46,7 @@ interface ExampleFlatNode {
 })
 export class MatTreeSelectComponent {
   private _transformer = (node: FoodNode, level: number) => {
+    console.log('@@@ DDD', level);
     return {
       expandable: !!node.children && node.children.length > 0,
       name: node.name,
@@ -69,6 +70,7 @@ export class MatTreeSelectComponent {
 
   constructor() {
     this.dataSource.data = TREE_DATA;
+    console.log(this.dataSource);
   }
 
   hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
