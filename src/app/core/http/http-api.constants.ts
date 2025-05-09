@@ -1,4 +1,10 @@
 export const API = {
+    HEADER: {
+      TREE_MENU: {
+         mockUrl: 'assets/data/produtsets.json',
+         apiUrl: ''
+      }
+    },
     HOME: {
      HOME_CARDS: {
         mockUrl: 'assets/data/portlets.json',
@@ -19,5 +25,14 @@ export const API = {
          mockUrl: 'assets/data/filter-data.json',
          apiUrl: ''
       },
-    }
+      STANDARD_FILTER_DATA: {
+         mockUrl: 'assets/data/standard.json',
+         apiUrl: ''
+      },
+      GLOBAL_RESULT: {
+         mockUrl: 'assets/data/global-search.json',
+         apiUrl: ''
+      },
+    },
+    
 }

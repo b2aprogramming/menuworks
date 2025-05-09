@@ -1,6 +1,8 @@
 import {FlatTreeControl} from '@angular/cdk/tree';
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
+import { API } from '@core/http/http-api.constants';
+import { HttpService } from '@core/http/http.service';
 
 /**
  * Food data with nested structure.
@@ -44,12 +46,13 @@ interface ExampleFlatNode {
   templateUrl: './mat-tree-select.component.html',
   styleUrls: ['./mat-tree-select.component.scss']
 })
-export class MatTreeSelectComponent {
-  private _transformer = (node: FoodNode, level: number) => {
+export class MatTreeSelectComponent implements OnInit {
+  public treeData: any[] = []
+  private _transformer = (node: any, level: number) => {
     console.log('@@@ DDD', level);
     return {
       expandable: !!node.children && node.children.length > 0,
-      name: node.name,
+      name: node.Name,
       level: level,
     };
   };
@@ -68,10 +71,39 @@ export class MatTreeSelectComponent {
 
   dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
 
-  constructor() {
-    this.dataSource.data = TREE_DATA;
+  constructor(public httpService: HttpService) {
+   // this.dataSource.data = TREE_DATA;
     console.log(this.dataSource);
   }
 
+  ngOnInit(): void {
+      this.getTreeData();
+  }
   hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
+
+  public getTreeData(){
+    this.httpService.get(API.HEADER.TREE_MENU).subscribe((res: any[]) => {
+        console.log('!!@@',res);
+
+        const data = res.reduce((x, ele) => {
+          if(x[ele.TypeId] === undefined) {
+            x[ele.TypeId] = [ele];
+          }else {
+            x[ele.TypeId].push(ele);
+          }
+          return x;
+        }, {});
+
+        for(let key in data) {
+          this.treeData.push({
+            Name: ' Tree '+key,
+            children: data[key]
+          });
+        }
+
+        this.dataSource.data = this.treeData;
+
+        console.log('!!22',this.treeData);
+    })
+  }
 }

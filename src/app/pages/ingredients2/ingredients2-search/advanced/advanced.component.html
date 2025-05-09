@@ -28,18 +28,18 @@
         </div>
         <div class="w-full">
             <app-expand-collapse *ngFor="let item of filterData" class="mb-2" className="border border-gray-400 rounded" headerClass="bg-grey2 rounded" iconOrder="2" [title]="item.name">
-                <section>
-                    <div>{{item.name}}</div>
-                    <!-- <div *ngFor="let listItem of item.data">
-                        <mat-checkbox class="example-margin" [(ngModel)]="listItem.selected">{{listItem.name}}</mat-checkbox>
-                    </div> -->
+                <section class="max-h-44 overflow-auto">
+                    <div class="px-2 py-1 cursor-pointer hover:bg-slate-200" *ngFor="let listItem of item.options
+                    ">
+                        <label>{{listItem.name}}</label>
+                    </div>
                 </section>
             </app-expand-collapse>
         </div>
     </div>
     <div class="md2:w-2/5 w-full">
         <h4 class="py-2">Selected Filters</h4>
-        <app-card [noShadow]="true" className="border-gray-400 rounded">
+        <app-card [noShadow]="true" className="border-gray-400 rounded h-[calc(100%-50px)]">
             <app-card-header className="bg-grey2 rounded-tl rounded-tr justify-between p-0">
                 <mat-radio-group aria-label="Select an option">
                     <mat-radio-button [value]="item.value" *ngFor="let item of selectedFilters">{{item.name}}</mat-radio-button>
@@ -73,8 +73,8 @@
         <section class="py-2">
             <h4>Resulting</h4>
         </section>
-        <section class="border border-gray-400 ">
-            <div class="w-full p-2 max-h-52 min-h-48 overflow-auto">
+        <section class="border border-gray-400 h-[calc(100%-100px)]">
+            <div class="w-full p-2 min-h-48 overflow-auto h-[calc(100%-50px)]">
                 <ul>
                     <li *ngFor="let item of listData | async" class="flex items-center gap-2">
                         <app-icon name="fruit"></app-icon>

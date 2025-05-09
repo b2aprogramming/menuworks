@@ -34,3 +34,11 @@ export interface FilterData {
     open: boolean;
     selectedFilters: FilterDataSelectedData[]
 }
+
+
+export interface StandardFilterData {
+    id: number;
+    name: string;
+    list?: number[];
+    children?: StandardFilterData[]
+}

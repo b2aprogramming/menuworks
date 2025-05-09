@@ -16,6 +16,8 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { StandardComponent } from './standard/standard.component';
 import { AdvancedComponent } from './advanced/advanced.component';
 import { CardModule } from '@shared/modules/card/card.module';
+import { MatTreeSelectInputModule } from '@shared/modules/mat-tree-select-input/mat-tree-select-input.module';
+import { TreeSelectModule } from '@shared/modules/tree-select/tree-select.module';
 
 
 
@@ -43,7 +45,9 @@ import { CardModule } from '@shared/modules/card/card.module';
     MatTableModule,
     MatPaginatorModule,
     MatTabsModule,
-    CardModule
+    CardModule,
+    MatTreeSelectInputModule,
+    TreeSelectModule
 ]
 })
 export class Ingredients2SearchModule { }

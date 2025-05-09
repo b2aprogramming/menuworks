@@ -7,12 +7,15 @@ import { MatTreeSelectComponent } from './mat-tree-select.component';
 import { ExpandCollapseModule } from '../expand-collapse/expand-collapse.module';
 import { MatIconModule } from '@angular/material/icon';
 import { IconModule } from "../icon/icon.module";
+import { MatInputModule } from '@angular/material/input';
+import { ReusableTreeSelectComponent } from './reusable-tree-select.component';
 
 
 
 @NgModule({
   declarations: [
-    MatTreeSelectComponent
+    MatTreeSelectComponent,
+    ReusableTreeSelectComponent
   ],
   imports: [
     CommonModule,
@@ -21,10 +24,12 @@ import { IconModule } from "../icon/icon.module";
     ExpandCollapseModule,
     MatTreeModule,
     MatIconModule,
+    MatInputModule,
     IconModule
 ],
   exports: [
-    MatTreeSelectComponent
+    MatTreeSelectComponent,
+    ReusableTreeSelectComponent
   ]
 })
 export class MatTreeSelectModule { }
